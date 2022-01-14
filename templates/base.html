@@ -1,0 +1,81 @@
+{% load static %}
+<html>
+    <head>
+        <title>tehcnician-customer app</title>
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        <style>
+                        /* #mainhome{
+
+            } */
+
+            header ul li {
+                float: left;  
+                margin-right: 3%;
+                
+            }
+            header ul li a{
+                font-family: sans-serif;
+                font-weight: bolder;
+                color: aliceblue;
+                text-decoration: none;
+                
+            }
+            header ul li a:hover {
+                background-color: #555;
+                color: white;
+            }
+            header ul{
+                position: fixed;
+                width: 95%;
+                margin-left: 20px;
+                margin-right: 20px; 
+                list-style-type: none;
+                margin-top: 0px;
+                padding-top: 10px;
+                height: 45px;
+                background-color: black;
+                overflow: auto;
+                z-index: 10;
+            }
+            /* .signdiv{
+                position: relative; 
+                height: 100%;
+                margin-top: 0%;
+                padding: 20px;
+            } */
+            header h1 {
+                color: red;
+                position: relative; 
+                margin-top: 0%;
+                padding: 40px;
+                }
+    
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="{% url 'home' %}">home</a></li>
+                <!-- <li><a href="{% url 'login' %}">log in</a></li> -->
+                <!-- <li><a style="padding-right: 100px;" href="{% url 'signup' %}">sign up</a></li> -->
+                <li><a href="{% url 'logout' %}">log out</a></li>
+                <li><a href="{% url 'change password' %}">change password</a></li>
+                <li><a href="{% url 'forgot password' %}">Forgot password </a></li>
+
+
+            
+            </ul>
+
+            <h1 style="color: rgb(155, 12, 12);">
+                YEAH BABY
+            </h1>
+            
+            <!-- <a href="{% url 'password_change' %}">Forgot password</a> -->
+        </header>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </body>
+    
+</html>

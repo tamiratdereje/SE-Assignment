@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>}selected technicians</title>
+        <style>
+            .card{
+                margin-top: 20px;
+                padding: 15px;
+            }
+            .card-header{
+                background-color: antiquewhite;
+                border: solid 2px black;
+                
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 3px;
+        
+            }
+            .card-body{
+                background-color: aliceblue;
+                border: solid 2px black;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+            }
+            
+
+        </style>
+    </head>
+    <body>
+
+        {% extends 'base.html' %}
+        {% block content %}
+        {% for technician in object_list %}
+
+        <div class="card">
+        <div class="card-header">
+        <span class="top title">{{ technician.FullName }}</span> &middot;
+        <span class="author"> |
+        {{ technician.location }}</span>
+
+        </div>
+        <div class="card-body">
+        {{ technician.device }}
+        </div>
+        <input type="button" name="apply" value="apply">
+        </div>
+        <br/>
+    
+        {% endfor %}
+        {% endblock content %}
+
+    </body>
+</html>
