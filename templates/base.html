@@ -54,17 +54,32 @@
     </head>
     <body>
         <header>
-            <ul>
-                <li><a href="{% url 'home' %}">home</a></li>
-                <!-- <li><a href="{% url 'login' %}">log in</a></li> -->
-                <!-- <li><a style="padding-right: 100px;" href="{% url 'signup' %}">sign up</a></li> -->
-                <li><a href="{% url 'logout' %}">log out</a></li>
-                <li><a href="{% url 'change password' %}">change password</a></li>
-                <li><a href="{% url 'forgot password' %}">Forgot password </a></li>
-
-
             
-            </ul>
+
+                {% if user.is_authenticated %}
+                <ul>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'techlist' %}">Technician</a></li>
+                    <li><a href="{% url 'orderit' %}">Fix My Device</a></li>
+                    <li><a href="{% url 'order' %}">Order</a></li>
+                    <li><a href="{% url 'feeditback' %}">Contact</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                </ul>`   
+            {% else %}
+                <ul>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'techlist' %}">Technician</a></li>
+                    <li><a href="{% url 'orderit' %}">Fix My Device</a></li>
+                    <li><a href="{% url 'order' %}">Order</a></li>
+                    <li><a href="{% url 'feeditback' %}">Contact</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    
+                </ul>
+            {% endif %}
+            
 
             <h1 style="color: rgb(155, 12, 12);">
                 YEAH BABY

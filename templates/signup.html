@@ -8,9 +8,10 @@
 </head>
 <body>
     {% extends 'base.html' %}
+    {% block content %}
     <a href="{% url 'customer_signup' %}">signup for customer</a> |
     <a href="{% url 'technician_signup' %}">Sign for technician</a>what mana
-
+    {% endblock content %}
     
 </body>
 </html>

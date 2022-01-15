@@ -1,0 +1,84 @@
+{% extends 'base.html' %}     
+  
+{% block title %}About{% endblock title %}
+{% block content %}
+<style>
+    .main__item5{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 2em;
+    align-items: center;
+   
+}
+
+.main__photo{
+    max-width: 100%;
+    max-height: 50%;
+    /* margin: 0 1em; */
+    border-radius: 0.5em;
+    align-items: center;
+
+}
+.main__item1{
+    width: 80%;
+    margin: 1em;
+    
+}
+.main__title{
+    align-items: center;
+}
+.makeshadow{
+    box-shadow: 0.02rem 0.1rem 0.2rem #3d3d3d;
+    border-radius: 0.5em;
+    max-width: 80%;
+    margin: 2em 3em;
+    padding: 1em;
+
+}
+</style>
+<main class="main">
+        
+    <section class="main__item5 makeshadow">
+
+        <h1 class="main__title">My file and Success</h1>
+        <section class="main__item1">
+            
+            <p class="main__item">Identify and solve software issues in C++ and SQL in Unix and Linux environments
+Integrate code changes, test code changes, and document code changes
+Develop automation scripts to test storage appliances in Python
+Develop base framework with Java, JSP, Struts, CSS, HTML, JavaScript, Oracle, and MS SQL Server
+Practice agile development methodologies and work with current networking technologiesExperienced software engineer 
+with a strong background in developing award-winning strategies for a diverse clientele. 12+ years of industry experience
+includes leading large engineering teams to achieve concrete goals on a strict deadline. Strong skills include Database management 
+and MySQL, .NET and Java. Motivated software engineer looking to pursue a successful career in software development at Company X, where 
+I can help in the delivery of state-of-the-art software solutions. Experience includes coding, troubleshooting, and testing for my own personal 
+projects while at University X. Relevant skills include PHP, Data Structures, Machine Learning, and Debugging.</p>
+        </section>
+
+        <section class="main__item1">
+            
+           <img class="main__photo" role="presentation" src="{{request.user.customer.profile_pic.url}}"  aria-hidden="true" alt="collections of my photo">
+           <img class="main__photo" role="presentation" src="{{request.user.technician.profile_pic.url}}"  aria-hidden="true" alt="collections of my photo">
+
+        </section>
+
+        <section class="main__item1">
+            
+            <p class="main__item">Integrate code changes, test code changes, and document code changes
+                Developed Perl and PHP scripts to translate data between applications
+                Developed automation scripts to test storage appliances in Python
+                Practice agile development methodologies and work with current networking technologies
+                Used Hadoop to build a scalable distributed data solution
+                Wrote, modified, and debugged software for clients
+                Developed code to complete assigned project by deadline
+                Developed HTML, CSS, JavaScript, and JSP pages for user interaction
+                Wrote Python scripts to load data and parse XML documents</p>
+
+        </section>
+        
+    </section>
+
+</main>
+{% endblock content %}

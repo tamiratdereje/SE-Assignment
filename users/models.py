@@ -16,12 +16,12 @@ class User(AbstractUser):
 class Device(models.Model):
     deviceId = fields.CharField(max_length=30)
     deviceName = fields.CharField(max_length=30)
-    deviceDescription = models.CharField(max_length=50)
-    ProfilePicture = models.ImageField(
-                            upload_to='images/', 
-                            height_field=None, 
-                            width_field=None, 
-                            max_length=None)
+    # deviceDescription = models.CharField(max_length=50)
+    # ProfilePicture = models.ImageField(
+    #                         upload_to='images/', 
+    #                         height_field=None, 
+    #                         width_field=None, 
+    #                         max_length=None)
     def __str__(self):
         return self.deviceName  
 
@@ -83,7 +83,8 @@ class Feedback(models.Model):
 
 class Payment(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete= models.SET_NULL, null=True,blank=True)
+    order = models.ForeignKey(User, on_delete=models.CASCADE,related_name= 'paymentOrder',default=1)
     content = models.CharField(max_length=300)
-    price = models.CharField(max_length=300)
+    price = models.IntegerField(max_length=300)
     AccountInforamtion = models.CharField(max_length=300)
     

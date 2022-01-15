@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>}technicians</title>
+        <style>
+            .card{
+                margin-top: 20px;
+                padding: 15px;
+            }
+            .card-header{
+                background-color: antiquewhite;
+                border: solid 2px black;
+                
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 3px;
+        
+            }
+            .card-body{
+                background-color: aliceblue;
+                border: solid 2px black;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+            }
+            
+
+        </style>
+    </head>
+    <body>
+
+        {% extends 'base.html' %}
+        {% block content %}
+        {% for order in object_list %}
+
+        <div class="card">
+        <div class="card-header">
+        <span class="top title">{{ order.user.FullName }}</span> &middot;
+        <span class="author"> |
+        {{ order.date }}</span>
+
+
+        </div>
+        <div class="card-body">
+        {{ order.device }}
+        </div>
+        </div>
+        <br/>
+    
+        {% endfor %}
+        {% endblock content %}
+
+    </body>
+</html>
